@@ -1,0 +1,28 @@
+<mat-toolbar style="background-color: rgb(75, 152, 216);" >
+    <mat-toolbar-row style="color: white;">
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+     
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/home'"> Home </a>
+      </div>
+    
+    </mat-toolbar-row>
+   
+    
+  </mat-toolbar>
+  <mat-sidenav-container autosize><mat-sidenav #sidenav mode="side" style="background-color: rgb(75, 152, 216);">
+    <mat-nav-list>
+   
+      <a mat-list-item [routerLink]="'/addProduct'" style="color:rgb(255, 255, 253)"> Add Product </a>
+      <a mat-list-item [routerLink]="'/findProduct'" style="color:rgb(255, 255, 253)"> Find Product </a>
+      <a mat-list-item [routerLink]="'/updateProduct'" style="color:rgb(255, 255, 253)"> Update Product </a>
+      <a mat-list-item [routerLink]="'/deleteProduct'" style="color:rgb(255, 255, 253)">Delete Product</a>
+      <a mat-list-item style="color:rgb(255, 255, 253)" (click)="sidenav.toggle()" [routerLink]="" mat-list-item>Close</a>
+   
+    </mat-nav-list>
+  </mat-sidenav>
+   
+  <router-outlet></router-outlet>

@@ -1,0 +1,73 @@
+<div class="container">
+    <h1 style="color: blue;">Add Product</h1>
+    <div class="row">
+    
+        <form  [formGroup]='productEditForm ' novalidate class="form">
+            Id: <input formControlName='Id'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Id')?.hasError('required')&& productEditForm.get('Id')?.touched">
+                Id is Required
+            </div>
+            <br/>
+            Title: <input formControlName='Title'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Title')?.hasError('required')&& productEditForm.get('Title')?.touched">
+                Title is Required
+            </div>
+            <br/>
+            Price: <input formControlName='Price'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Price')?.dirty  && productEditForm?.get('Price')?.errors && productEditForm?.get('Price')?.errors?.priceRange ">
+                Price b/w {{min}} and {{max}}
+            </div>
+            <br/>
+            Quantity: <input formControlName='Quantity'
+            type="number"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Quantity')?.hasError('required')&& productEditForm.get('Quantity')?.touched" >
+                Quantity is Required
+            </div>
+            <br/>
+            Color: <input formControlName='Color'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('Color')?.hasError('required')&& productEditForm.get('Color')?.touched" >
+                Color is Required
+            </div>
+            <br/>
+            Expiry Date: <input formControlName='ExpiryDate'
+            type="text"
+            class="form-control"
+            />
+            <div class="alert alert-danger" *ngIf="productEditForm?.get('ExpiryData')?.hasError('required')&& productEditForm.get('ExpiryData')?.touched" >
+                ExpiryData is Required
+            </div>
+            <br/>
+            InStock :<div class="form-check" >
+                <label class="form-check-label" >
+                  <div class="row">
+                    <span id="radio1">
+                       <input type="radio" class="form-check-input" formControlName="IsInStock" value=true  name="IsInStock" >True
+                    </span> <span id="radio2">  
+                         <input type="radio" class="form-check-input" formControlName="IsInStock" value=false name="IsInStock">False
+                        </span>
+                    </div>
+           
+           
+                </label>
+              </div>
+            <button type="button"  class="btn btn-danger" (click)='addData()'>Add Data</button>
+            <button type="button" (click)='cancel()' class="btn btn-info">Reset</button>
+        </form>
+
+    </div>
+
+</div>
