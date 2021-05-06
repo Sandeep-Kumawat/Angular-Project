@@ -42,7 +42,7 @@ export class AppService {
     );
   }
     getProduct(id:number):Observable<Product>{
-      const apiurl = environment.apibaseurl+"Products" + id;
+      const apiurl = environment.apibaseurl+"Products/" + id;
       const headers = {'content-type':'application/json'};
       return this.http.get<Product>(apiurl,{headers:headers}).pipe(
         catchError(error=>this.handleError(error))
@@ -51,12 +51,12 @@ export class AppService {
    updateProduct(product : Product): Observable<Product>{
     const apiurl = environment.apibaseurl+"Products/" + product.id;
     const headers = {'content-type':'application/json'};
-    return this.http.put<Product>(apiurl,{headers:headers}).pipe(
+    return this.http.put<Product>(apiurl,product,{headers:headers}).pipe(
       catchError(error=>this.handleError(error))
     );
    }
-   deleteProduct(product :Product):Observable<Product>{
-    const apiurl = environment.apibaseurl+"Products/" + product.id;
+   deleteProduct(id :number):Observable<Product>{
+    const apiurl = environment.apibaseurl+"Products/" + id;
     const headers = {'content-type':'application/json'};
     return this.http.delete<Product>(apiurl,{headers:headers}).pipe(
       catchError(error=>this.handleError(error))

@@ -52,18 +52,16 @@
             </div>
             <br/>
             InStock :<div class="form-check" >
-                <label class="form-check-label" >
-                  <div class="row">
+                <label class="form-check-label">
                     <span id="radio1">
                        <input type="radio" class="form-check-input" formControlName="IsInStock" value=true  name="IsInStock" >True
-                    </span> <span id="radio2">  
+                    </span> <br/>
+                    <span id="radio2">  
                          <input type="radio" class="form-check-input" formControlName="IsInStock" value=false name="IsInStock">False
                         </span>
-                    </div>
-           
-           
                 </label>
               </div>
+              <br/>
             <button type="button"  class="btn btn-danger" (click)='addData()'>Add Data</button>
             <button type="button" (click)='cancel()' class="btn btn-info">Reset</button>
         </form>

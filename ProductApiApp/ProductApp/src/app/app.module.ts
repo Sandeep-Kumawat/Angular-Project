@@ -11,13 +11,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatTableModule} from '@angular/material/table';
 import { FormGroupName, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import { AddProductComponent } from './add-product/add-product.component';
 import { FindProductComponent } from './find-product/find-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { MaterialTableComponent } from './material-table/material-table.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -37,7 +41,10 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
     AddProductComponent,
     FindProductComponent,
     UpdateProductComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    MaterialTableComponent,
+    ProductDetailComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,9 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
     MatButtonModule,
     MatListModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    
    
   
   ],

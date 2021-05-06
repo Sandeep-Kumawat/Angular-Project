@@ -1,8 +1,6 @@
 <br/><br/>
 <div class="container">
-    <input type="number" [(ngModel)]='id' placeholder="Enter Id  to Delete"/>
-     <button type="button" (click)='findData()'>Find Product</button><br/><br/>
-    <div class="row"  *ngIf="showtable">
+    <div class="row" >
     
         <form  [formGroup]='productEditForm ' novalidate class="form">
            
@@ -54,11 +52,17 @@
                     </span> <span id="radio2"> <br/> 
                          <input type="radio" class="form-check-input" formControlName="IsInStock" [value]="false" name="IsInStock">False
                         </span>
+                    
+           
+           
                 </label>
               </div>
               <br/>
+            <button type="button"  class="btn btn-danger" (click)='updateData()' >Update Data</button>
+            <button type="button" (click)='cancel()' class="btn btn-info">Reset</button>
         </form>
-    </div>
-</div>
 
+    </div>
+
+</div>
 
